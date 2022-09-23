@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name='sphinxcontrib.youtube',
-    version='1.2.0',
+    version='100.2.1',
     packages=setuptools.find_packages(),
     install_requires=[
         'sphinx',
