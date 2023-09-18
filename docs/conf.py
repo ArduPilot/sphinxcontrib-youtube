@@ -54,7 +54,7 @@ html_context = {
 
 # -- Option for Latex output ---------------------------------------------------
 
-# create a custom sphinx output for the youtube and vimeo video
+# create a custom sphinx output for the youtube, vimeo and peertube video
 youtube_cmd = (
     r"\newcommand{\sphinxcontribyoutube}[3]"
     r"{\begin{figure}\sphinxincludegraphics{{#2}.jpg}\caption{\url{#1#2#3}}\end{figure}}"
@@ -66,4 +66,10 @@ vimeo_cmd = (
     "\n"
 )
 
-latex_elements = {"preamble": youtube_cmd + vimeo_cmd}
+peertube_cmd = (
+    r"\newcommand{\sphinxcontribpeertube}[3]"
+    r"{\begin{figure}\sphinxincludegraphics{{#2}.jpg}\caption{\url{#1#2#3}}\end{figure}}"
+    "\n"
+)
+
+latex_elements = {"preamble": youtube_cmd + vimeo_cmd + peertube_cmd}
