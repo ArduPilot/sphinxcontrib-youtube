@@ -8,7 +8,11 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from sphinx.util import logging
 from sphinx.util.console import brown
-from sphinx.util.display import status_iterator
+try:
+    from sphinx.util.display import status_iterator
+except ImportError:  # try old iterator until everybody move their wiki to recent sphinx
+    from sphinx.util import status_iterator
+
 
 logger = logging.getLogger(__name__)
 
